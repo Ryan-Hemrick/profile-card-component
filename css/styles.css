@@ -1,0 +1,162 @@
+:root {
+  --clr-cyan: hsl(185, 75%, 39%);
+
+  --clr-neutral-700: hsl(229, 23%, 23%);
+  --clr-neutral-500: hsl(227, 10%, 46%);
+  --clr-neutral-400: hsl(0, 0%, 59%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-kumbh-sans: 'Kumbh Sans', Helvetica, Arial, sans-serif;
+}
+
+
+/*############################
+General Styles
+##############################*/
+
+body {
+  min-height: 100vh;
+  padding: 1.5rem;  
+  background-color: var(--clr-cyan);
+  background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
+  background-repeat: no-repeat;
+  background-position: right 45vw bottom 40vh, left 45vw top 40vh;
+
+  font-family: var(--ff-kumbh-sans);
+  font-weight: 400;
+  color: var(--clr-neutral-700);
+  font-size: 1rem;
+
+  /* Using flexbox to vertically and horizontally center profile card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust background-position for larger devices */
+@media (min-width: 30em) {
+  body {
+    background-position: right 50vw bottom 45vh, left 50vw top 45vh;
+  }  
+}
+
+
+
+/*############################
+Font Styles
+##############################*/
+
+h1 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--clr-neutral-500);
+}
+
+h1.profile__about__name span {
+  color: var(--clr-neutral-500);
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+p.metric {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+p.desc {
+  font-size: 0.688rem;
+  letter-spacing: 0.125rem;
+}
+
+a {
+  color: var(--clr-white);
+}
+
+
+
+/*############################
+Profile Card Styles
+##############################*/
+
+.profile {
+  background-color: var(--clr-white);
+  border-radius: 1rem;
+
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile__banner {
+  background-color: var(--clr-cyan);
+  background-image: url('../images/bg-pattern-card.svg');
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 140px;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.profile__img {
+  /* Using a negative margin instead of transform to avoid too much whitespace */
+  margin-top: -50px;
+
+  margin-bottom: 1.25rem;
+}
+
+.profile__img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--clr-white);
+}
+
+.profile__about__name {
+  margin-bottom: 0.5rem;
+}
+
+.profile__about {
+  margin-bottom: 1.75rem;
+  padding: 0 0.5rem;
+}
+
+.profile__socials {
+  display: flex;
+  gap: 2.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+  padding: 1.75rem 0.5rem;
+  border-top: 1px solid var(--clr-neutral-400);
+}
+
+.metric {
+  margin-bottom: 0.125rem;
+}
+
+
+
+/*############################
+Attribution Styles
+##############################*/
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--clr-white)
+}
+footer p {
+  font-size: 0.625rem;
+  font-weight: 300;
+}
